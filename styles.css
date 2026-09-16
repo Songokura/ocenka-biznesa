@@ -268,15 +268,14 @@ html.no-plate .rv{opacity:1;transition:none}
 .bmap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(15,17,20,.85))}
 .bmap figcaption{position:absolute;left:24px;right:24px;bottom:22px;z-index:2;font:500 14px/1.45 var(--ft);color:rgba(255,255,255,.86)}
 .nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.nums li{padding:22px 20px 20px;background:var(--ink2);border-top:1px solid var(--gold);display:grid;gap:8px;align-content:start}
-.nums b{font:300 clamp(40px,4vw,60px)/1 var(--fd);letter-spacing:-.01em;font-variant-numeric:lining-nums;font-feature-settings:"lnum";color:#fff;white-space:nowrap}
+.nums li{padding:22px 20px 20px;background:var(--ink2);border-top:1px solid var(--gold);display:grid;gap:8px;align-content:start;min-width:0;container-type:inline-size}
+.nums b{font:300 clamp(40px,4vw,60px)/1 var(--fd);font-size:clamp(28px,26cqi,60px);letter-spacing:-.01em;font-variant-numeric:lining-nums;font-feature-settings:"lnum";color:#fff;white-space:nowrap}
 .nums span{font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.62)}
 .accept{margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .accept li{padding:22px 22px;background:var(--ink2);display:grid;gap:8px;align-content:start}
 .accept b{font:600 11px/1.2 var(--ft);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .accept span{font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
 @media(max-width:900px){.bento{grid-template-columns:1fr;gap:12px}.bmap{aspect-ratio:1.618;min-height:0}.nums{gap:12px}.nums li{padding:16px 16px 14px}.accept{grid-template-columns:1fr;gap:10px;margin-top:12px}.accept li{padding:16px 18px}}
-@media(max-width:420px){.nums b{font-size:34px}}
 
 /* ленты: портфель и письма - с кнопками листания */
 .arrows{display:flex;gap:10px;flex:0 0 auto}
@@ -312,11 +311,11 @@ html.no-plate .rv{opacity:1;transition:none}
 
 /* как работаем: шаги 01-04, контурная цифра слева */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.step{padding:24px 22px 26px;background:var(--paper2);box-shadow:0 1px 0 var(--line);display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-content:start;transition:transform .35s,box-shadow .35s}
+.step{padding:24px 22px 26px;background:var(--paper2);box-shadow:0 1px 0 var(--line);display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;align-content:start;transition:transform .35s,box-shadow .35s}
 .step:hover{transform:translateY(-3px);box-shadow:0 1px 0 var(--line),0 30px 50px -36px rgba(20,23,27,.45)}
 .step .n{grid-row:1 / span 2;font:300 46px/1 var(--fd);color:transparent;-webkit-text-stroke:1px var(--gold);font-variant-numeric:lining-nums;font-feature-settings:"lnum";letter-spacing:-.02em;padding-top:2px}
 .step h3{font:600 18px/1.25 var(--fd);color:var(--txt);align-self:end}
-.step p{font-size:14px;color:var(--mut);line-height:1.5}
+.step p{font-size:14px;color:var(--mut);line-height:1.5;overflow-wrap:break-word}
 .fee{margin-top:28px;padding:22px 26px;border-left:1px solid var(--gold);display:grid;gap:6px}
 .fee b{font:600 19px/1.25 var(--fd);color:var(--txt)}
 .fee p{font-size:14.5px;color:var(--mut)}
