@@ -263,19 +263,20 @@ html.no-plate .rv{opacity:1;transition:none}
 
 /* доверие: карта и цифры в сетке сечения */
 .bento{display:grid;grid-template-columns:61.8fr 38.2fr;gap:16px;align-items:stretch}
-.bmap{position:relative;overflow:hidden;background:var(--ink3);min-height:320px}
-.bmap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.bmap{position:relative;overflow:hidden;background:var(--ink3);aspect-ratio:1294/805;align-self:start}
+.bmap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .bmap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(15,17,20,.85))}
 .bmap figcaption{position:absolute;left:24px;right:24px;bottom:22px;z-index:2;font:500 14px/1.45 var(--ft);color:rgba(255,255,255,.86)}
-.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.nums li{padding:22px 20px 20px;background:var(--ink2);border-top:1px solid var(--gold);display:grid;gap:8px;align-content:start;min-width:0;container-type:inline-size}
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:16px}
+.nums li{padding:22px 20px 20px;background:var(--ink2);border-top:1px solid var(--gold);display:grid;gap:8px;align-content:space-between;min-width:0;container-type:inline-size}
 .nums b{font:300 clamp(40px,4vw,60px)/1 var(--fd);font-size:clamp(28px,26cqi,60px);letter-spacing:-.01em;font-variant-numeric:lining-nums;font-feature-settings:"lnum";color:#fff;white-space:nowrap}
 .nums span{font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.62)}
 .accept{margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .accept li{padding:22px 22px;background:var(--ink2);display:grid;gap:8px;align-content:start}
 .accept b{font:600 11px/1.2 var(--ft);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .accept span{font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
-@media(max-width:900px){.bento{grid-template-columns:1fr;gap:12px}.bmap{aspect-ratio:1.618;min-height:0}.nums{gap:12px}.nums li{padding:16px 16px 14px}.accept{grid-template-columns:1fr;gap:10px;margin-top:12px}.accept li{padding:16px 18px}}
+@media(max-width:900px){.bento{grid-template-columns:1fr;gap:12px}.bmap{aspect-ratio:1294/805}.nums{gap:12px}.nums li{padding:16px 16px 14px}.accept{grid-template-columns:1fr;gap:10px;margin-top:12px}.accept li{padding:16px 18px}}
+@media(max-width:760px){.bmap{aspect-ratio:auto}.bmap img{position:static;display:block;height:auto;aspect-ratio:1294/805}.bmap::after{display:none}.bmap figcaption{position:static;padding:14px 16px 16px;font-size:13.5px}}
 
 /* ленты: портфель и письма - с кнопками листания */
 .arrows{display:flex;gap:10px;flex:0 0 auto}
