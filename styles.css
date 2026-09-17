@@ -47,6 +47,8 @@ ul,ol{padding:0;list-style:none}
 .kick::before{content:"";width:28px;height:1px;flex:0 0 auto;background:var(--gold)}
 .h2{font:300 clamp(30px,4.3vw,56px)/1.06 var(--fd);letter-spacing:-.01em;margin-top:16px;color:inherit}
 .h2 em{font-style:normal;font-weight:600}
+@media(min-width:761px){.nw{white-space:nowrap}}
+@media(max-width:760px){#otzyvy .h2{font-size:clamp(24px,7vw,30px)}}
 .lead{margin-top:14px;font-size:15.5px;line-height:1.6;color:var(--mut)}
 .sec-dark .lead{color:rgba(255,255,255,.66)}
 @media(min-width:761px){.lead{font-size:17.5px;margin-top:18px}}
@@ -171,8 +173,10 @@ html.no-plate .hero-txt > .wrap > *{opacity:1;transform:none;transition:none}
 .h1 .big em{font-style:normal;font-weight:600}
 .h1 .sub{display:block;font:500 clamp(19px,min(2vw,3.6svh),30px)/1.25 var(--ft);margin-top:.6em;color:#fff}
 .tags{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:clamp(14px,2.4svh,24px);font:500 15px/1.35 var(--ft);color:rgba(255,255,255,.86)}
-.tags span{display:inline-flex;align-items:center}
-.tags span:not(:last-child)::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);margin:0 12px}
+.tags{flex-direction:column;gap:6px}
+.tg{display:flex;flex-wrap:wrap;gap:6px 0}
+.tg span{display:inline-flex;align-items:center}
+.tg span:not(:last-child)::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);margin:0 12px}
 .badges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:600px;margin-top:clamp(18px,3.4svh,36px)}
 .badges li{display:grid;justify-items:center;align-content:start;text-align:center;padding:0 12px;position:relative}
 .badges li + li::before{content:"";position:absolute;left:0;top:6%;height:88%;width:1px;background:linear-gradient(180deg,transparent,var(--gold) 20%,var(--gold) 80%,transparent)}
@@ -197,7 +201,7 @@ html.no-plate .hero-txt > .wrap > *{opacity:1;transform:none;transition:none}
   .h1 .big{font-size:clamp(32px,9.6vw,42px)}
   .h1 .sub{font-size:17px}
   .tags{font-size:13px;margin-top:12px}
-  .tags span:not(:last-child)::after{margin:0 8px}
+  .tg span:not(:last-child)::after{margin:0 8px}
   .badges{margin-top:18px}
   .badges li{padding:0 6px}
   .badges img{height:52px;margin-bottom:8px}
@@ -301,6 +305,7 @@ html.no-plate .rv{opacity:1;transition:none}
 .step h3{font:600 18px/1.25 var(--fd);color:var(--txt);align-self:end}
 .step p{font-size:14px;color:var(--mut);line-height:1.5;overflow-wrap:break-word}
 .fee{margin-top:28px;padding:18px 26px;border-left:1px solid var(--gold)}
+.fee{display:grid;gap:6px}
 .fee p{font-size:15.5px;line-height:1.55;color:var(--txt2)}
 @media(max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.steps{grid-template-columns:1fr;gap:10px}.step{padding:18px 18px 20px}.step .n{font-size:40px}.fee{padding:18px 18px}}
